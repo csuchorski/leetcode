@@ -14,14 +14,18 @@ namespace Solution{
         while(i < len){
             val = nums[i];
             j = i+1;
-            while(nums[j] == val){
+            while( j < len && nums[j] == val){
                 j++
+            }
+            if(j == len - 1){
+                break;
             }
             for(int k = i+1; k<j;k++){
                 nums[k] = nums[j];
             }
             i++;
         }
+        return i;
     }
     }
 }
